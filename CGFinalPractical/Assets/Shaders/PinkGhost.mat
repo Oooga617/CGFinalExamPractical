@@ -68,7 +68,7 @@ Material:
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _FresGlow: 100
-    - _FresPower: 0.44
+    - _FresPower: 4.06
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5

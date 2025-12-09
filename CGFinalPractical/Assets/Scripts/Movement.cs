@@ -3,7 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed = 5f; // Movement speed
-
+    public bool isPoweredUp = false;
     void Update()
     {
         // Get input values
