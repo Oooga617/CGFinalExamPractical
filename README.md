@@ -21,4 +21,27 @@ I used the hologram effect for the pacman game replica for the power up balls, w
 
 <img width="317" height="152" alt="image" src="https://github.com/user-attachments/assets/8140149f-8512-43f8-b628-d301c1484c21" />
 
-#
+# Scrolling Textures, Fresnel and attempt of Flat Shading
+The next effects I tried to use are Scrolling textures, rim lighting again and Flat shading. I have already covered how Fresnel works, but as for scrolling textures it samples a texture (with the sampler set to have the texture repeat so that no weird issues when offseting/animating the scrolling) and then in the UV port of the texture sampler it is connected to a Tiling and Offset node. That node with the offset port is how the textures will be scrolled, and a product of the 2D vector property to dictate the direction and speed of the scrolling along with the time node to control the scrolling:
+
+<img width="1016" height="392" alt="image" src="https://github.com/user-attachments/assets/bd466709-ed52-44ae-983a-82887c7cab35" />
+
+This was used for the ghosts, add I quickly made a texture in Substance Painter 3D to make it scroll to make it look like an etheral/ghostly presense was there coupled with the rim lighting being bright and making the shader transparent to add a level of transparency given that ghosts are (conventionally anyways) see through. 
+
+<img width="1323" height="767" alt="image" src="https://github.com/user-attachments/assets/c57d308d-4d8a-45b7-a2d4-330db5a07b0e" />
+
+<img width="302" height="246" alt="image" src="https://github.com/user-attachments/assets/bd11379e-a7ff-4639-bd48-29338a477b6b" />
+
+<img width="418" height="268" alt="image" src="https://github.com/user-attachments/assets/713a0982-ba65-47f2-9d1d-2b2450e1e8ab" />
+
+<img width="192" height="173" alt="image" src="https://github.com/user-attachments/assets/1cef5970-1f9a-401b-a176-303abbc74c58" />
+
+<img width="195" height="112" alt="image" src="https://github.com/user-attachments/assets/02fed964-2ef2-4814-a8b3-9bc5348ce200" />
+
+
+However, because Pacman is a retro game I wanted to give them and Pacman later a low-poly appearence with the use of Flat shading.
+With that said, I had issues implementing it. How its meant to work is that the normals are recalculated on the X and Y axises with the use of the DDX and DDY nodes, which they take the difference of pixels next to them and above them for the recalculations, and they are put through a cross product to make the new modified normals. From there they are dot producted with the normalized main light direction vectors and saturated, and then multiplied with the base color of the object:
+
+
+<img width="1162" height="650" alt="image" src="https://github.com/user-attachments/assets/647d6355-f4c2-4598-8585-3b61e8b0b73b" />
+
