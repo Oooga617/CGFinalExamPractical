@@ -7,6 +7,10 @@ The first effect implemented was this hologram shader, where it combines transpa
 
 From there the Fresnel effect was done using a prebuilt in Fresnel node, but how it works is that the normalized vectors of the view direction and the normals in world space are dot producted to create a light distribution. Said distribution is then subtracting 1 so that the light distribution goes from the middle of the object to the edges, and then it is saturated so that the light values are between 0 and 1 for lighting calculations, along with then being ran through a power node to control the amount of rim lighting is on the object, and then having be multiplied with the base color property and added in the final output:
 
+basically what is happening with the light distriubtion with the view direction, normals, and substracting one:
+
+<img width="712" height="285" alt="image" src="https://github.com/user-attachments/assets/81604607-34be-4247-af44-6130369199f2" />
+
 <img width="1252" height="553" alt="image" src="https://github.com/user-attachments/assets/1088b983-bb03-4b9b-86c2-c9b50375b15b" />
 
 (Note that the Fresnel effect node does a lot of the fresnel light calculations for us for saving time).
