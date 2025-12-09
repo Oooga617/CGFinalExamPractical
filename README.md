@@ -122,3 +122,6 @@ I proceeded regardless, but it caused my Unity to "freeze":
 
 <img width="1917" height="1016" alt="image" src="https://github.com/user-attachments/assets/cf1874cd-0751-4c5d-8e08-8ee28c9cbee5" />
 
+Thankfully it started to run normally:
+
+<img width="1118" height="983" alt="image" src="https://github.com/user-attachments/assets/7b5f713b-b5ce-4e9c-9d04-5ecb2d25ff1e" />
