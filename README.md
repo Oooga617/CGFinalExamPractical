@@ -42,6 +42,12 @@ This was used for the ghosts, add I quickly made a texture in Substance Painter 
 However, because Pacman is a retro game I wanted to give them and Pacman later a low-poly appearence with the use of Flat shading.
 With that said, I had issues implementing it. How its meant to work is that the normals are recalculated on the X and Y axises with the use of the DDX and DDY nodes, which they take the difference of pixels next to them and above them for the recalculations, and they are put through a cross product to make the new modified normals. From there they are dot producted with the normalized main light direction vectors and saturated, and then multiplied with the base color of the object:
 
+<img width="838" height="758" alt="image" src="https://github.com/user-attachments/assets/d2291d66-3e42-46ff-bf35-47c3bf89bc0c" />
 
+What ends up happening is that the results for the ghosts look like this:
+
+<img width="416" height="312" alt="image" src="https://github.com/user-attachments/assets/72b1ec22-e207-4b07-b9b5-19e7353577a2" />
+
+I tried looking into it, but I couldnt figure out how to work around it and (as of writing) really needed to move on
 <img width="1162" height="650" alt="image" src="https://github.com/user-attachments/assets/647d6355-f4c2-4598-8585-3b61e8b0b73b" />
 
