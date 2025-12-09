@@ -112,3 +112,4 @@ Now I tried to further convey that these walls are meant to be metallic with the
 
 <img width="302" height="455" alt="image" src="https://github.com/user-attachments/assets/d3182915-1fe9-4cc0-ac37-9067f258e0dc" />
 
+ALL ASSETS ARE MADE IN MAINLY SUBSTANCE PAINTER 3D FOR THE TEXTURES EXCEPT FOR THE FRUIT SPRITE AS IT WAS MADE IN ASEPRITE.
