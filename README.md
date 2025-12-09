@@ -51,3 +51,27 @@ What ends up happening is that the results for the ghosts look like this:
 I tried looking into it, but I couldnt figure out how to work around it and (as of writing) really needed to move on
 <img width="1162" height="650" alt="image" src="https://github.com/user-attachments/assets/647d6355-f4c2-4598-8585-3b61e8b0b73b" />
 
+I even downloaded the shaderlab script for flat shading and noticed there were bugs when I tried to apply it onto Pacman:
+
+<img width="1406" height="567" alt="image" src="https://github.com/user-attachments/assets/b4d8ef0c-8ce4-4909-b213-d3a67d1a941d" />
+
+<img width="788" height="561" alt="image" src="https://github.com/user-attachments/assets/f640f28e-f09b-4e46-9b17-d769ae193fb9" />
+
+# Transparency
+The third effect used in this is transparency, which what it does is that for a transparent texture, it is isolated from the background because of the 4th channel which is the alpha channel. There is not much to explain other than the texture is sampled in the shader graph code, and that the final result is plugged into the final color port of the fragment shader along with the alpha channel of the sampler is plugged into the alpha port of the fragment shader:
+
+<img width="1018" height="610" alt="image" src="https://github.com/user-attachments/assets/3a2bbfb9-45de-4a73-acf3-0503d1e91a20" />
+
+The shader settings though need to be set to allow alpha clipping though, along with the transparent texture needing to be set as a transparent texture in order for it work:
+
+<img width="505" height="506" alt="image" src="https://github.com/user-attachments/assets/10dd0d6e-cd69-4fc2-b355-cbfe44dfd0b3" />
+
+<img width="1063" height="573" alt="image" src="https://github.com/user-attachments/assets/7e1a889f-8b11-49c0-bbc2-53a1a51db903" />
+
+I used this to make a cherry sprite pick up, where in the actual Pac-man game the player can go over to touch fruits to earn more points. I specifically used this because time constraints (I do not want to spend 30 minutes modeling a cherry and trying to use flat shading when I have issues implementing it as previously stated), but also that I quickly made a 2D sprite of the cherry in aseprite, and that to convey more of a retro theme for the game I wanted to use a 2D, pixelated sprite just for that:
+
+<img width="287" height="266" alt="image" src="https://github.com/user-attachments/assets/37272833-b9b5-4222-8ce8-01aec1a0f6b6" />
+
+(Its also appearing on a cube just so that Pacman as an easier time colliding with it compared if it was just a flat, quad or plane). 
+
+
