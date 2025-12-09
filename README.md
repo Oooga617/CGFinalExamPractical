@@ -113,3 +113,15 @@ Now I tried to further convey that these walls are meant to be metallic with the
 <img width="302" height="455" alt="image" src="https://github.com/user-attachments/assets/d3182915-1fe9-4cc0-ac37-9067f258e0dc" />
 
 ALL ASSETS ARE MADE IN MAINLY SUBSTANCE PAINTER 3D FOR THE TEXTURES EXCEPT FOR THE FRUIT SPRITE AS IT WAS MADE IN ASEPRITE.
+
+just to note when I was making the build, and I exported the build in my downloads section in my files I got this pop up:
+
+<img width="987" height="762" alt="image" src="https://github.com/user-attachments/assets/ea3b0fdb-06dd-49c2-860f-65699c51d12c" />
+
+I proceeded regardless, but it caused my Unity to "freeze":
+
+<img width="1917" height="1016" alt="image" src="https://github.com/user-attachments/assets/cf1874cd-0751-4c5d-8e08-8ee28c9cbee5" />
+
+Thankfully it started to run normally:
+
+<img width="1118" height="983" alt="image" src="https://github.com/user-attachments/assets/7b5f713b-b5ce-4e9c-9d04-5ecb2d25ff1e" />
