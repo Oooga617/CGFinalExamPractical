@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");     // W/S or Up/Down
 
         // Movement direction
-        Vector3 direction = new Vector3(horizontal, 0f, vertical);
+        Vector3 direction = new Vector3(horizontal, vertical, 0f);
 
         // Apply movement
         transform.Translate(direction * speed * Time.deltaTime);
