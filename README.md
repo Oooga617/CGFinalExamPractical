@@ -125,3 +125,11 @@ I proceeded regardless, but it caused my Unity to "freeze":
 Thankfully it started to run normally:
 
 <img width="1118" height="983" alt="image" src="https://github.com/user-attachments/assets/7b5f713b-b5ce-4e9c-9d04-5ecb2d25ff1e" />
+
+I tried moving the project build into the github folder and tried to delete a folder I made unneccessarily Its also kinda frozen, and the changes are not present in the github:
+
+<img width="1452" height="667" alt="image" src="https://github.com/user-attachments/assets/873f4fb3-e093-4f0a-90e2-0ccb385cc2db" />
+
+<img width="1705" height="890" alt="image" src="https://github.com/user-attachments/assets/41ae7367-4412-46b0-a02c-dc87930ee414" />
+
+<img width="1885" height="896" alt="image" src="https://github.com/user-attachments/assets/5d9de837-e1a1-40f5-bb4e-883a0cdf95e0" />
