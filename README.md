@@ -56,14 +56,21 @@ What ends up happening is that the results for the ghosts look like this:
 
 <img width="416" height="312" alt="image" src="https://github.com/user-attachments/assets/72b1ec22-e207-4b07-b9b5-19e7353577a2" />
 
-I tried looking into it, but I couldnt figure out how to work around it and (as of writing) really needed to move on
+I tried looking into it, but I couldnt figure out how to work around it for a while, until I realized that I needed to plug in the recalculated normals with the cross product of edge 1 and 2 with the ddx and ddy values:
+
 <img width="1162" height="650" alt="image" src="https://github.com/user-attachments/assets/647d6355-f4c2-4598-8585-3b61e8b0b73b" />
 
-I even downloaded the shaderlab script for flat shading and noticed there were bugs when I tried to apply it onto Pacman:
+<img width="1152" height="748" alt="image" src="https://github.com/user-attachments/assets/bc2aa64a-6983-4c70-b876-81d4109abb8a" />
 
-<img width="1406" height="567" alt="image" src="https://github.com/user-attachments/assets/b4d8ef0c-8ce4-4909-b213-d3a67d1a941d" />
+So now the ghosts look like this, which is good enough for me:
 
-<img width="788" height="561" alt="image" src="https://github.com/user-attachments/assets/f640f28e-f09b-4e46-9b17-d769ae193fb9" />
+<img width="610" height="431" alt="image" src="https://github.com/user-attachments/assets/5513f7b1-0f9c-496e-962c-0417b46a0ee4" />
+
+I also managed to add it to pac man so he is low poly with the ghosts as well:
+
+<img width="408" height="295" alt="image" src="https://github.com/user-attachments/assets/af29fee2-084f-4118-816d-369bc08d8b91" />
+
+<img width="1507" height="701" alt="image" src="https://github.com/user-attachments/assets/56146d37-eb00-4e05-bc82-afbbe6abd7ae" />
 
 # Transparency
 The third effect used in this is transparency, which what it does is that for a transparent texture, it is isolated from the background because of the 4th channel which is the alpha channel. There is not much to explain other than the texture is sampled in the shader graph code, and that the final result is plugged into the final color port of the fragment shader along with the alpha channel of the sampler is plugged into the alpha port of the fragment shader:
@@ -97,4 +104,11 @@ Now admitedly the details of the walls are subtle, so here are the textures for 
 
 I used this for the walls, as in Pacman they do not look that interesting at all. There are just bevelled, dark blue outlines for where the barriers of the maze are positioned at, and I wanted to enhance the detail of the sense by trying to interpret them as metallic because I thought that would fit better for what was supposed to be retro, I also loosely think of things like arcade cabinents or smooth surfaces when I think of retro games, so that thought process translated into the textures.
 
-Now I tried to further convey that these walls are meant to be metallic with the attempt of a metallic shine effect, and how that worked was that 
+Now I tried to further convey that these walls are meant to be metallic with the attempt of a metallic shine effect, and how that worked was that first the specular calculations needed to be done which is by taking the sum of normalized view direction and main light direction vectors (the main light direction vector is flipped by multipling it with negative 1 to correct the specular), and then it is dot producted with the normalized object normals in world space to create the specular. It is then saturated to restrict the light calculation results, along with running it through the power node to control the specular and then multiplying all of that with the sampled base texture to overlay onto the final result to make the surface have a shine to it:
+
+<img width="1527" height="797" alt="image" src="https://github.com/user-attachments/assets/2991501d-1123-441c-b7f2-2fae808a5a76" />
+
+<img width="677" height="427" alt="image" src="https://github.com/user-attachments/assets/329a4161-5d9d-457e-b01e-ade5f3a7ab36" />
+
+<img width="302" height="455" alt="image" src="https://github.com/user-attachments/assets/d3182915-1fe9-4cc0-ac37-9067f258e0dc" />
+
