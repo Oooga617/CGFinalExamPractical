@@ -44,6 +44,10 @@ With that said, I had issues implementing it. How its meant to work is that the 
 
 <img width="838" height="758" alt="image" src="https://github.com/user-attachments/assets/d2291d66-3e42-46ff-bf35-47c3bf89bc0c" />
 
+This is what I wanted for the balls representing the ghosts:
+
+<img width="417" height="138" alt="image" src="https://github.com/user-attachments/assets/fc7179b1-5564-4c36-80d1-20ac1c02303a" />
+
 What ends up happening is that the results for the ghosts look like this:
 
 <img width="416" height="312" alt="image" src="https://github.com/user-attachments/assets/72b1ec22-e207-4b07-b9b5-19e7353577a2" />
@@ -74,4 +78,19 @@ I used this to make a cherry sprite pick up, where in the actual Pac-man game th
 
 (Its also appearing on a cube just so that Pacman as an easier time colliding with it compared if it was just a flat, quad or plane). 
 
+# Metallic and bump mapping attempt
+Finally, I tried using both bump mapping and a metallic shine for the walls of the maze, and this was done to add a bit more detail than just amking them a flat, beveled wall. Admitedly I used the shader graph code for the bump mapping on canvas, but to explain how it works: two textures are sampled, the base texture and a normal map. The normal map has encoded data for modifying the normals of the mesh within the RBG values of the texture, and on the x and y axises from the r and g ports of the samplier they are multiplied with a property that dictates the bump amount to control how much of it can be applied. From there those x and y values along with the z value from the b port are compiled into a 3D vector for lighting calculations, but first it needs to be transformed using the transform node to convert the normals and tangents into world space, and then get normalized so it can be dot producted with the normnalized main light direction. The result is then saturated, multiplied by negative 1, and then multiplied with the sampeld texture to apply the bump mapping on:
 
+<img width="1203" height="570" alt="image" src="https://github.com/user-attachments/assets/6e36b658-bab2-4259-b95b-1aa724435981" />
+
+<img width="1140" height="752" alt="image" src="https://github.com/user-attachments/assets/134c4d40-77a9-4eab-aa9f-ce3683c25409" />
+
+Now admitedly the details of the walls are subtle, so here are the textures for the walls I quickly made in Substance Painter 3D to give an idea on how the walls are supposed to look:
+
+<img width="513" height="512" alt="image" src="https://github.com/user-attachments/assets/4e65b053-8870-4908-8a20-e89604e2c0ce" />
+
+<img width="508" height="507" alt="image" src="https://github.com/user-attachments/assets/6c59fbe3-d0f2-4fef-889c-b8fcd8507284" />
+
+I used this for the walls, as in Pacman they do not look that interesting at all. There are just bevelled, dark blue outlines for where the barriers of the maze are positioned at, and I wanted to enhance the detail of the sense by trying to interpret them as metallic because I thought that would fit better for what was supposed to be retro, I also loosely think of things like arcade cabinents or smooth surfaces when I think of retro games, so that thought process translated into the textures.
+
+Now I tried to further convey that these walls are meant to be metallic with the attempt of a metallic shine effect, and how that worked was that 
