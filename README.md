@@ -133,3 +133,5 @@ I tried moving the project build into the github folder and tried to delete a fo
 <img width="1705" height="890" alt="image" src="https://github.com/user-attachments/assets/41ae7367-4412-46b0-a02c-dc87930ee414" />
 
 <img width="1885" height="896" alt="image" src="https://github.com/user-attachments/assets/5d9de837-e1a1-40f5-bb4e-883a0cdf95e0" />
+
+I should have the unity project folder in there, but not the build itself.
